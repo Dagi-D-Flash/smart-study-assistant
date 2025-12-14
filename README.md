@@ -8,4 +8,4 @@ An e-learning platform that helps students study smarter using personalized assi
 3.Dagim Demissew   ---> WOUR/0528/16 
 4.Eyaderadis Belete --> WOUR/0749/16 
 5.Ferehan Ahmed    ---> WOUR/0791/16 
-6.Meklit Mulugeta  ---> WOUR/1286/16
+6.Meklit Mulugeta  ---> WOUR/1286/16 Github username - MeklitMulugeta
