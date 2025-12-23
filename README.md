@@ -6,7 +6,7 @@ An e-learning platform that helps students study smarter using personalized assi
 
 ## NAME ID
 
-1.Abebe Getachew ---> WOUR/0044/16
+1.Abebe Getachew ---> WOUR/0044/16 Github username - wour004416
 2.Blen Mesfin ---> WOUR/0510/16 Github Username - blenmesfin16
 3.Dagim Demissew ---> WOUR/0528/16
 4.Eyaderadis Belete --> WOUR/0749/16
