@@ -1,7 +1,10 @@
+
+
+
 ## system architecture diagrams
 
 ## Module Diagram
-
+![Module Diagram](<GeniusGuide - Module Diagram.drawio (2) (2).png>)
 ## Data flow Diagram
 
 ![Data flow diagram](<Data Flow Diagram .drawio.png>)
@@ -187,3 +190,4 @@
 ![NotificationSentToStudent](LLD_Sequence_NotificationSentToStudent.png)
 
 ## Error handling and validations
+
