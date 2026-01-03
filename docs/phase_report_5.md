@@ -10,6 +10,54 @@
 
 ## Class diagram method definitions
 
+## Streak
+
+## ● updateStreak()
+
+## ○ Increments streak if active daily
+
+## Question
+
+## ● getQuestionText()
+
+## ○ Returns the text of the question
+
+## ● getCorrectAnswer()
+
+## ○ Returns the correct answer
+
+## ● validateAnswer(answer)
+
+## ○ Checks if the answer is correct
+
+## ● getOptions()
+
+## ○ Returns all answer options
+
+## Leaderboard
+
+## ● updateRanking(student)
+
+## ○ Updates student rank
+
+## Notification
+
+## ● sendNotification()
+
+## ○ Sends message to user
+
+## AIRequest
+
+## ● sendRequest()
+
+## ○ Sends prompt to AI service
+
+## AIResponse
+
+## ● getResponse()
+
+## ○ Returns AI explanation
+
 ## Pseudocode or algorithms
 
 ## Detailed Database Tables
@@ -129,5 +177,13 @@
 4. Admin Creates a Course
 
 ![AdminCreateCourse](LLD_Sequence_AdminCreateCourse.png)
+
+6. Admin Creates Quiz
+
+![AdminCreateQuiz](LLD_Sequence_AdminCreateQuiz.png)
+
+7. Notification Sent to Student
+
+![NotificationSentToStudent](LLD_Sequence_NotificationSentToStudent.png)
 
 ## Error handling and validations
