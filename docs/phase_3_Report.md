@@ -1,2 +1,15 @@
 final class diagram
 ![class_diagram](<class diagram.png>)
+![admin](admin-1.png) 
+![aiRequest](AiRequest-1.png)
+ ![airesponse](AiResponse-1.png)
+  ![Leaderboard](Leaderboard-1.png) 
+  ![Notification](Notification-1.png)
+   ![Question](Question-1.png) 
+   ![Quiz](Quiz-1.png) 
+   ![QuizAttempt](QuizAttempt-1.png) 
+   ![result](Result-1.png)
+    ![streak](Streak-1.png) 
+    ![student](Student-1.png) 
+    
+    ![user](User-1.png)
