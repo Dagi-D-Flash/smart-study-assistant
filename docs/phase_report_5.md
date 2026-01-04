@@ -419,16 +419,16 @@
 
 ## Example Table (Users) : 
 
-## Column	    Type	       Constraints
+## Column	               Type	                  Constraints
 
-## user_id	    INT	           PRIMARY KEY, AUTO_INCREMENT
+## user_id	               INT	                  PRIMARY KEY, AUTO_INCREMENT
 
-## username	    VARCHAR(50)	   UNIQUE, NOT NULL
+## username	               VARCHAR(50)	          UNIQUE, NOT NULL
 
-## email	    VARCHAR(100)   UNIQUE, NOT NULL
+## email	               VARCHAR(100)           UNIQUE, NOT NULL
 
-## password	    ARCHAR(255)	   NOT NULL
+## password	               VARCHAR(255)	           NOT NULL
 
-## age	        INT	           CHECK (age >= 1 AND age <= 120)
+## age	                   INT	                   CHECK (age >= 1 AND age <= 120)
 
 >>>>>>> origin/main
