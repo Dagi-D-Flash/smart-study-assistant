@@ -1,6 +1,12 @@
+<<<<<<< HEAD
+final class diagram
+![class_diagram](<class-diagram.png>)
+![admin](admin-1.png) 
+=======
 ![class_diagram](<class diagram.png>)
 ![Reversed Class Diagram](Reverse_Engineered_Class_Diagram.png)
 ![admin](admin-1.png)
+>>>>>>> main
 ![aiRequest](AiRequest-1.png)
 ![airesponse](AiResponse-1.png)
 ![Leaderboard](Leaderboard-1.png)
