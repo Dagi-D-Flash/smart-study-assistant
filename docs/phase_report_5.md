@@ -1,10 +1,9 @@
-
-
-
 ## system architecture diagrams
 
 ## Module Diagram
+
 ![Module Diagram](<GeniusGuide - Module Diagram.drawio (2) (2).png>)
+
 ## Data flow Diagram
 
 ![Data flow diagram](<Data Flow Diagram .drawio.png>)
@@ -62,6 +61,55 @@
 ## ○ Returns AI explanation
 
 ## Pseudocode or algorithms
+
+7. Result
+   generateResult(score)
+   INPUT score
+   IF score >= passMark THEN
+   grade = "Pass"
+   passed = true
+   ELSE
+   grade = "Fail"
+   passed = false
+   END IF
+   STORE result
+   RETURN grade
+
+8. Streak
+   updateStreak()
+   IF lastActiveDate == yesterday THEN
+   currentStreak = currentStreak + 1
+   ELSE
+   currentStreak = 1
+   END IF
+
+UPDATE lastActiveDate
+SAVE streak data
+
+9. Leaderboard
+   updateRanking(student)
+   FETCH all students and scores
+   SORT students by totalPoints descending
+   UPDATE ranking positions
+   SAVE leaderboard data
+
+10. Notification
+    sendNotification()
+    INPUT message, userId
+    CHECK if user exists
+    SEND notification to user
+    STORE notification record
+
+11. AIRequest
+    sendRequest()
+    SEND question to AI Service
+    WAIT for response
+    FORWARD response to AIResponse
+
+12. AIResponse
+    getResponse()
+    RECEIVE response from AI Service
+    RETURN AI-generated answer
 
 ## Detailed Database Tables
 
@@ -190,4 +238,3 @@
 ![NotificationSentToStudent](LLD_Sequence_NotificationSentToStudent.png)
 
 ## Error handling and validations
-
