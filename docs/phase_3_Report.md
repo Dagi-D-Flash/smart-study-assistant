@@ -1,5 +1,5 @@
 final class diagram
-![class_diagram](<class diagram.png>)
+![class_diagram](<class-diagram.png>)
 ![admin](admin-1.png) 
 ![aiRequest](AiRequest-1.png)
  ![airesponse](AiResponse-1.png)

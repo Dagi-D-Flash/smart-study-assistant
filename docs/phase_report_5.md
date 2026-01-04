@@ -626,7 +626,7 @@ SAVE streak data
 ## );
 
 ## Sequence diagrams
-
+![Student Enroll in Course](image.png)
 2. student takes quize
 
 ![student takes quize](studentTakesQuize.png)
