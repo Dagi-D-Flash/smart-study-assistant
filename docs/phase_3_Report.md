@@ -1,4 +1,3 @@
-final class diagram
 ![class_diagram](<class diagram.png>)
 ![Reversed Class Diagram](Reverse_Engineered_Class_Diagram.png)
 ![admin](admin-1.png)
@@ -12,11 +11,6 @@ final class diagram
 ![result](Result-1.png)
 ![streak](Streak-1.png)
 ![student](Student-1.png)
+![user](User-1.png)
 
-    ![user](User-1.png)
 
-## Modified java files for the purpose of Reverse Engineering
-
-    ![QuestionModified](QuestionModified.png)
-    ![QuizAttempt](QuizAttemptModified.png)
-    ![ResultModifie](ResultModified.png)
