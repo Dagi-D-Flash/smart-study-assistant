@@ -4,6 +4,8 @@
 
 ## system architecture diagrams
 
+![system architecture](GeniusGuide_SystemArchitecture.drawio.png)
+
 ## Module Diagram
 
 ![Module Diagram](<GeniusGuide - Module Diagram.drawio (2) (2).png>)
@@ -65,6 +67,115 @@
 ## ○ Returns AI explanation
 
 ## Pseudocode or algorithms
+
+## 1. User (Abstract Class)
+
+## login(email, password)
+## INPUT email, password
+## FETCH user record from User DB using email
+##  
+## IF user exists AND storedPassword == password THEN
+##     START user session
+##     RETURN true
+## ELSE
+##     RETURN false
+## END IF
+##  
+## logout()
+## END current user session
+## CLEAR session data
+##  
+## resetPassword(email)
+## INPUT email
+## CHECK if email exists in User DB
+##  
+## IF email exists THEN
+##     GENERATE reset token
+##     SEND reset instructions to user email
+## ELSE
+##     DISPLAY "Email not found"
+## END IF
+##  
+## 2. Student (inherits User)
+
+## viewDashboard()
+## FETCH student quizzes
+## FETCH streak information
+## FETCH leaderboard rank
+## DISPLAY dashboard data
+##  
+## takeQuiz(quizId)
+## INPUT quizId
+## FETCH quiz details using quizId
+## DISPLAY questions to student
+##  
+## RECORD student answers
+## CREATE new QuizAttempt
+## CALL calculateScore()
+## STORE attempt result
+## RETURN QuizAttempt
+##  
+## askAIQuestion(question)
+## INPUT question
+## CREATE AIRequest object
+## SEND request to AI Service
+## RECEIVE AIResponse
+## RETURN AIResponse
+##  
+## viewLeaderboard()
+## FETCH leaderboard data
+## DISPLAY student rankings
+##  
+## 3. Admin (inherits User)
+
+## manageUsers()
+## DISPLAY list of users
+## ALLOW add, update, or delete user
+## SAVE changes to User DB
+##  
+## manageQuizzes()
+## DISPLAY quizzes
+## ALLOW create, update, delete quiz
+## SAVE changes to Quiz DB
+##  
+## manageMaterials()
+## UPLOAD or update study materials
+## SAVE materials in system
+##  
+## 4. Quiz
+
+## addQuestion(question)
+## INPUT question
+## ADD question to quiz question list
+## UPDATE quiz data
+##  
+## calculateTotalMarks()
+## totalMarks = 0
+## FOR each question in quiz
+##     totalMarks = totalMarks + question.marks
+## END FOR
+## RETURN totalMarks
+##  
+## 5. Question
+
+## validateAnswer(answer)
+## INPUT answer
+## IF answer == correctAnswer THEN
+##     RETURN true
+## ELSE
+##     RETURN false
+## END IF
+##  
+## 6. QuizAttempt
+
+## calculateScore()
+## score = 0
+## FOR each question in quiz
+##     IF validateAnswer(studentAnswer) == true THEN
+##         score = score + question.marks
+##     END IF
+## END FOR
+## RETURN score
 
 7. Result
    generateResult(score)
@@ -346,6 +457,9 @@ SAVE streak data
 ## );
 
 ## Sequence diagrams
+2. student takes quize 
+
+![student takes quize](studentTakesQuize.png)
 
 3. student ask AI Assistant
    ![Student Ask AI Assistant](<LLD_Sequence_student asks AI assistant.jpg>)
