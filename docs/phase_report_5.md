@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-![alt text](<GeniusGuide – High Level Database Schema.drawio.png>)
 =======
 
 
@@ -13,6 +12,7 @@
 ![Data flow diagram](<Data Flow Diagram .drawio.png>)
 
 ## High Level Database Schema
+![High Level Database Schema](<GeniusGuide – High Level Database Schema.drawio.png>)
 
 ## Class diagram method definitions
 
