@@ -315,4 +315,120 @@
 
 ## Error handling and validations
 
+## Objective:
+
+## Ensure the system reliably handles invalid inputs, unexpected events, and runtime errors. All validations and error handling must maintain data integrity, system stability, and provide user-friendly feedback.
+
+##
+
+## 1. Input Validation
+
+## Purpose: Prevent invalid, incomplete, or malicious data from entering the system.
+
+## Input Validation Guidelines
+
+## The system implements strict input validation to ensure data integrity and prevent invalid or malicious entries. For text fields, inputs must not be empty and should only contain allowed characters; for example, "John Doe" is valid, whereas "John@123" is invalid. Numeric fields must accept only numbers within defined ranges, such as an age between 1 and 120. Email addresses must match the standard regex pattern ^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$ to be considered valid.
+
+##  Passwords are required to have a minimum of eight characters and include at least one uppercase letter, one lowercase letter, one digit, and one special character; for instance, "Abc@1234" is valid. All mandatory fields such as name, email, and password cannot be left empty. Finally, fields that must be unique, such as username and email, are validated against existing database records to prevent duplication.
+
+## Java Example: 
+
+## public void validateUser(User user) throws ValidationException {
+
+##     if(user.getName().isEmpty()) throw new ValidationException("Name cannot be empty");
+
+##     if(!user.getEmail().matches("^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"))
+
+##         throw new ValidationException("Invalid email format");
+
+##     if(user.getPassword().length() < 8) throw new ValidationException("Password too short");
+
+##     if(Database.usernameExists(user.getUsername()))
+
+##         throw new ValidationException("Username already taken");
+
+## }
+
+##
+
+## 2. Error Handling
+
+## Purpose: Detect, manage, and respond to unexpected events without crashing the system.
+
+## Types of Errors:
+
+## 1.User Errors: Invalid input, wrong login credentials.
+
+##
+
+## 2.System Errors: Database failures, file I/O errors.
+
+##
+
+## 3.Application Logic Errors: Null references, division by zero, or other runtime exceptions.
+
+##
+
+## Java Example (try-catch for user registration):
+
+## try {
+
+##     validateUser(user);
+
+##     Database.save(user);
+
+## } catch (ValidationException ve) {
+
+##     System.out.println("Input Error: " + ve.getMessage());
+
+## } catch (DatabaseException de) {
+
+##     logError(de); // log for developers
+
+##     System.out.println("System error. Please try again later.");
+
+## } catch (Exception e) {
+
+##     logError(e);
+
+##     System.out.println("Unexpected error occurred.");
+
+## }
+
+##
+
+##
+
+## 3. Database-Level Validation
+
+## ●Primary Key Constraints: Prevent duplicate records.
+
+##
+
+## ●Foreign Key Constraints: Ensure referential integrity.
+
+##
+
+## ●Check Constraints: Enforce valid ranges or formats.
+
+##
+
+## ●Triggers/Stored Procedures: Additional validation before inserts/updates.
+
+##
+
+## Example Table (Users) : 
+
+## Column	    Type	       Constraints
+
+## user_id	    INT	           PRIMARY KEY, AUTO_INCREMENT
+
+## username	    VARCHAR(50)	   UNIQUE, NOT NULL
+
+## email	    VARCHAR(100)   UNIQUE, NOT NULL
+
+## password	    ARCHAR(255)	   NOT NULL
+
+## age	        INT	           CHECK (age >= 1 AND age <= 120)
+
 >>>>>>> origin/main
