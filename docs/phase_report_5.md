@@ -1,7 +1,5 @@
 ![alt text](<GeniusGuide – High Level Database Schema.drawio.png>)
 
-
-
 ## system architecture diagrams
 
 ![system architecture](GeniusGuide_SystemArchitecture.drawio.png)
@@ -17,48 +15,81 @@
 ## High Level Database Schema
 
 ## Class diagram method definitions
+
 ## User (Abstract)
+
 ## ●login(email, password)
+
 ## ○Verifies user credentials from database
+
 ## ○Starts session if valid
+
 ## ●logout()
+
 ## ○Ends user session
+
 ## ●resetPassword(email)
+
 ## ○Sends password reset instruction
 
 ## Student
+
 ## ●viewDashboard()
+
 ## ○Displays quizzes, streak, leaderboard rank
+
 ## ●takeQuiz(quizId)
+
 ## ○Loads quiz
+
 ## ○Records answers
+
 ## ○Creates QuizAttempt
+
 ## ●askAIQuestion(question)
+
 ## ○Sends question to AI module
+
 ## ●viewLeaderboard()
+
 ## ○Retrieves ranking information
 
 ## Admin
+
 ## ●manageUsers()
+
 ## ○Add, update, delete users
+
 ## ●manageQuizzes()
+
 ## ○Create, update quizzes
+
 ## ●manageMaterials()
+
 ## ○Upload study resources
 
 ## Quiz
+
 ## ●addQuestion(question)
+
 ## ○Adds question to quiz
+
 ## ●calculateTotalMarks()
+
 ## ○Sums marks of all questions
 
 ## QuizAttempt
+
 ## ●calculateScore()
+
 ## ○Compares answers
+
 ## ○Computes total score
 
 ## Result
+
 ## ●generateResult(score)
+
 ## ○Determines grade and pass/fail
 
 ## Streak
@@ -114,110 +145,205 @@
 ## 1. User (Abstract Class)
 
 ## login(email, password)
+
 ## INPUT email, password
+
 ## FETCH user record from User DB using email
-##  
+
+##
+
 ## IF user exists AND storedPassword == password THEN
-##     START user session
-##     RETURN true
+
+## START user session
+
+## RETURN true
+
 ## ELSE
-##     RETURN false
+
+## RETURN false
+
 ## END IF
-##  
+
+##
+
 ## logout()
+
 ## END current user session
+
 ## CLEAR session data
-##  
+
+##
+
 ## resetPassword(email)
+
 ## INPUT email
+
 ## CHECK if email exists in User DB
-##  
+
+##
+
 ## IF email exists THEN
-##     GENERATE reset token
-##     SEND reset instructions to user email
+
+## GENERATE reset token
+
+## SEND reset instructions to user email
+
 ## ELSE
-##     DISPLAY "Email not found"
+
+## DISPLAY "Email not found"
+
 ## END IF
-##  
+
+##
+
 ## 2. Student (inherits User)
 
 ## viewDashboard()
+
 ## FETCH student quizzes
+
 ## FETCH streak information
+
 ## FETCH leaderboard rank
+
 ## DISPLAY dashboard data
-##  
+
+##
+
 ## takeQuiz(quizId)
+
 ## INPUT quizId
+
 ## FETCH quiz details using quizId
+
 ## DISPLAY questions to student
-##  
+
+##
+
 ## RECORD student answers
+
 ## CREATE new QuizAttempt
+
 ## CALL calculateScore()
+
 ## STORE attempt result
+
 ## RETURN QuizAttempt
-##  
+
+##
+
 ## askAIQuestion(question)
+
 ## INPUT question
+
 ## CREATE AIRequest object
+
 ## SEND request to AI Service
+
 ## RECEIVE AIResponse
+
 ## RETURN AIResponse
-##  
+
+##
+
 ## viewLeaderboard()
+
 ## FETCH leaderboard data
+
 ## DISPLAY student rankings
-##  
+
+##
+
 ## 3. Admin (inherits User)
 
 ## manageUsers()
+
 ## DISPLAY list of users
+
 ## ALLOW add, update, or delete user
+
 ## SAVE changes to User DB
-##  
+
+##
+
 ## manageQuizzes()
+
 ## DISPLAY quizzes
+
 ## ALLOW create, update, delete quiz
+
 ## SAVE changes to Quiz DB
-##  
+
+##
+
 ## manageMaterials()
+
 ## UPLOAD or update study materials
+
 ## SAVE materials in system
-##  
+
+##
+
 ## 4. Quiz
 
 ## addQuestion(question)
+
 ## INPUT question
+
 ## ADD question to quiz question list
+
 ## UPDATE quiz data
-##  
+
+##
+
 ## calculateTotalMarks()
+
 ## totalMarks = 0
+
 ## FOR each question in quiz
-##     totalMarks = totalMarks + question.marks
+
+## totalMarks = totalMarks + question.marks
+
 ## END FOR
+
 ## RETURN totalMarks
-##  
+
+##
+
 ## 5. Question
 
 ## validateAnswer(answer)
+
 ## INPUT answer
+
 ## IF answer == correctAnswer THEN
-##     RETURN true
+
+## RETURN true
+
 ## ELSE
-##     RETURN false
+
+## RETURN false
+
 ## END IF
-##  
+
+##
+
 ## 6. QuizAttempt
 
 ## calculateScore()
+
 ## score = 0
+
 ## FOR each question in quiz
-##     IF validateAnswer(studentAnswer) == true THEN
-##         score = score + question.marks
-##     END IF
+
+## IF validateAnswer(studentAnswer) == true THEN
+
+## score = score + question.marks
+
+## END IF
+
 ## END FOR
+
 ## RETURN score
 
 7. Result
@@ -381,7 +507,7 @@ SAVE streak data
 
 ## );
 
-## 7.  Result Table (1-to-1 with QuizAttempt)
+## 7. Result Table (1-to-1 with QuizAttempt)
 
 ## CREATE TABLE results (
 
@@ -395,13 +521,13 @@ SAVE streak data
 
 ## FOREIGN KEY (attempt_id) REFERENCES quiz_attempts(attempt_id)
 
-## 	ON DELETE CASCADE
+## ON DELETE CASCADE
 
 ## );
 
 ##
 
-## 8.  Streak Table (1-to-1 with Student)
+## 8. Streak Table (1-to-1 with Student)
 
 ## CREATE TABLE streaks (
 
@@ -415,13 +541,13 @@ SAVE streak data
 
 ## FOREIGN KEY (student_id) REFERENCES students(student_id)
 
-## 	ON DELETE CASCADE
+## ON DELETE CASCADE
 
 ## );
 
 ##
 
-## 9.  Leaderboard Table (Aggregation of Students)
+## 9. Leaderboard Table (Aggregation of Students)
 
 ## CREATE TABLE leaderboard (
 
@@ -455,7 +581,7 @@ SAVE streak data
 
 ## FOREIGN KEY (user_id) REFERENCES users(user_id)
 
-## 	ON DELETE CASCADE
+## ON DELETE CASCADE
 
 ## );
 
@@ -475,7 +601,7 @@ SAVE streak data
 
 ## FOREIGN KEY (student_id) REFERENCES students(student_id)
 
-## 	ON DELETE CASCADE
+## ON DELETE CASCADE
 
 ## );
 
@@ -495,12 +621,13 @@ SAVE streak data
 
 ## FOREIGN KEY (request_id) REFERENCES ai_requests(request_id)
 
-## 	ON DELETE CASCADE
+## ON DELETE CASCADE
 
 ## );
 
 ## Sequence diagrams
-2. student takes quize 
+
+2. student takes quize
 
 ![student takes quize](studentTakesQuize.png)
 
@@ -511,7 +638,7 @@ SAVE streak data
 ![AdminCreateCourse](LLD_Sequence_AdminCreateCourse.png)
 
 5. Student Views Results
-![Student Views Results](LLD_Sequence_StudentViewResults.png)
+   ![Student Views Results](LLD_Sequence_StudentViewResults.png)
 
 6. Admin Creates Quiz
 
@@ -522,4 +649,3 @@ SAVE streak data
 ![NotificationSentToStudent](LLD_Sequence_NotificationSentToStudent.png)
 
 ## Error handling and validations
-
