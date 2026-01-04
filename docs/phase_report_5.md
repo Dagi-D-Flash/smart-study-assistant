@@ -225,6 +225,8 @@ SAVE streak data
 
 ## Sequence diagrams
 
+3. student ask AI Assistant
+   ![Student Ask AI Assistant](<LLD_Sequence_student asks AI assistant.jpg>)
 4. Admin Creates a Course
 
 ![AdminCreateCourse](LLD_Sequence_AdminCreateCourse.png)
