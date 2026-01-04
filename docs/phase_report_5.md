@@ -1,10 +1,3 @@
-![alt text](<GeniusGuide – High Level Database Schema.drawio.png>)
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> main
 ## system architecture diagrams
 
 ![system architecture](GeniusGuide_SystemArchitecture.drawio.png)
@@ -19,9 +12,10 @@
 
 ## High Level Database Schema
 
+![High level database schema](<GeniusGuide – High Level Database Schema.drawio.png>)
+
 ## Class diagram method definitions
 
-<<<<<<< HEAD
 ## User (Abstract)
 
 ## ●login(email, password)
@@ -98,8 +92,6 @@
 
 ## ○Determines grade and pass/fail
 
-=======
->>>>>>> main
 ## Streak
 
 ## ● updateStreak()
@@ -153,7 +145,6 @@
 ## 1. User (Abstract Class)
 
 ## login(email, password)
-<<<<<<< HEAD
 
 ## INPUT email, password
 
@@ -353,7 +344,6 @@
 
 ## END FOR
 
-=======
 ## INPUT email, password
 ## FETCH user record from User DB using email
 ##  
@@ -458,7 +448,6 @@
 ##         score = score + question.marks
 ##     END IF
 ## END FOR
->>>>>>> main
 ## RETURN score
 
 7. Result
@@ -622,11 +611,7 @@ SAVE streak data
 
 ## );
 
-<<<<<<< HEAD
 ## 7. Result Table (1-to-1 with QuizAttempt)
-=======
-## 7.  Result Table (1-to-1 with QuizAttempt)
->>>>>>> main
 
 ## CREATE TABLE results (
 
@@ -640,21 +625,15 @@ SAVE streak data
 
 ## FOREIGN KEY (attempt_id) REFERENCES quiz_attempts(attempt_id)
 
-<<<<<<< HEAD
 ## ON DELETE CASCADE
-=======
 ## 	ON DELETE CASCADE
->>>>>>> main
 
 ## );
 
 ##
 
-<<<<<<< HEAD
 ## 8. Streak Table (1-to-1 with Student)
-=======
 ## 8.  Streak Table (1-to-1 with Student)
->>>>>>> main
 
 ## CREATE TABLE streaks (
 
@@ -668,21 +647,15 @@ SAVE streak data
 
 ## FOREIGN KEY (student_id) REFERENCES students(student_id)
 
-<<<<<<< HEAD
 ## ON DELETE CASCADE
-=======
 ## 	ON DELETE CASCADE
->>>>>>> main
 
 ## );
 
 ##
 
-<<<<<<< HEAD
 ## 9. Leaderboard Table (Aggregation of Students)
-=======
 ## 9.  Leaderboard Table (Aggregation of Students)
->>>>>>> main
 
 ## CREATE TABLE leaderboard (
 
@@ -716,11 +689,8 @@ SAVE streak data
 
 ## FOREIGN KEY (user_id) REFERENCES users(user_id)
 
-<<<<<<< HEAD
 ## ON DELETE CASCADE
-=======
 ## 	ON DELETE CASCADE
->>>>>>> main
 
 ## );
 
@@ -740,11 +710,8 @@ SAVE streak data
 
 ## FOREIGN KEY (student_id) REFERENCES students(student_id)
 
-<<<<<<< HEAD
 ## ON DELETE CASCADE
-=======
 ## 	ON DELETE CASCADE
->>>>>>> main
 
 ## );
 
@@ -764,21 +731,14 @@ SAVE streak data
 
 ## FOREIGN KEY (request_id) REFERENCES ai_requests(request_id)
 
-<<<<<<< HEAD
-## ON DELETE CASCADE
-=======
 ## 	ON DELETE CASCADE
->>>>>>> main
 
 ## );
 
 ## Sequence diagrams
-<<<<<<< HEAD
 ![Student Enroll in Course](image.png)
 2. student takes quize
-=======
 2. student takes quize 
->>>>>>> main
 
 ![student takes quize](studentTakesQuize.png)
 
@@ -789,11 +749,8 @@ SAVE streak data
 ![AdminCreateCourse](LLD_Sequence_AdminCreateCourse.png)
 
 5. Student Views Results
-<<<<<<< HEAD
    ![Student Views Results](LLD_Sequence_StudentViewResults.png)
-=======
 ![Student Views Results](LLD_Sequence_StudentViewResults.png)
->>>>>>> main
 
 6. Admin Creates Quiz
 
@@ -804,7 +761,4 @@ SAVE streak data
 ![NotificationSentToStudent](LLD_Sequence_NotificationSentToStudent.png)
 
 ## Error handling and validations
-<<<<<<< HEAD
-=======
 
->>>>>>> main
