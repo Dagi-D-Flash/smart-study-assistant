@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+![alt text](<GeniusGuide – High Level Database Schema.drawio.png>)
+=======
 
 
 
@@ -175,11 +178,132 @@
 
 ## );
 
+## 7.  Result Table (1-to-1 with QuizAttempt)
+
+## CREATE TABLE results (
+
+## result_id INT AUTO_INCREMENT PRIMARY KEY,
+
+## attempt_id INT UNIQUE NOT NULL,
+
+## grade VARCHAR(20),
+
+## generated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+## FOREIGN KEY (attempt_id) REFERENCES quiz_attempts(attempt_id)
+
+## 	ON DELETE CASCADE
+
+## );
+
+##
+
+## 8.  Streak Table (1-to-1 with Student)
+
+## CREATE TABLE streaks (
+
+## streak_id INT AUTO_INCREMENT PRIMARY KEY,
+
+## student_id INT UNIQUE NOT NULL,
+
+## current_streak INT DEFAULT 0,
+
+## last_activity DATE,
+
+## FOREIGN KEY (student_id) REFERENCES students(student_id)
+
+## 	ON DELETE CASCADE
+
+## );
+
+##
+
+## 9.  Leaderboard Table (Aggregation of Students)
+
+## CREATE TABLE leaderboard (
+
+## leaderboard_id INT AUTO_INCREMENT PRIMARY KEY,
+
+## student_id INT NOT NULL,
+
+## total_score INT DEFAULT 0,
+
+## rank_position INT,
+
+## FOREIGN KEY (student_id) REFERENCES students(student_id)
+
+## );
+
+##
+
+## 10. Notifications Table
+
+## CREATE TABLE notifications (
+
+## notification_id INT AUTO_INCREMENT PRIMARY KEY,
+
+## user_id INT NOT NULL,
+
+## message TEXT NOT NULL,
+
+## is_read BOOLEAN DEFAULT FALSE,
+
+## sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+## FOREIGN KEY (user_id) REFERENCES users(user_id)
+
+## 	ON DELETE CASCADE
+
+## );
+
+##
+
+## 11. AI Requests Table
+
+## CREATE TABLE ai_requests (
+
+## request_id INT AUTO_INCREMENT PRIMARY KEY,
+
+## student_id INT NOT NULL,
+
+## question TEXT NOT NULL,
+
+## requested_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+## FOREIGN KEY (student_id) REFERENCES students(student_id)
+
+## 	ON DELETE CASCADE
+
+## );
+
+##
+
+## 12. AI Responses Table (1-to-1)
+
+## CREATE TABLE ai_responses (
+
+## response_id INT AUTO_INCREMENT PRIMARY KEY,
+
+## request_id INT UNIQUE NOT NULL,
+
+## response TEXT NOT NULL,
+
+## responded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+## FOREIGN KEY (request_id) REFERENCES ai_requests(request_id)
+
+## 	ON DELETE CASCADE
+
+## );
+
 ## Sequence diagrams
 
 4. Admin Creates a Course
 
 ![AdminCreateCourse](LLD_Sequence_AdminCreateCourse.png)
+
+5. Student Views Results
+![Student Views Results](LLD_Sequence_StudentViewResults.png)
 
 6. Admin Creates Quiz
 
@@ -191,3 +315,4 @@
 
 ## Error handling and validations
 
+>>>>>>> origin/main
